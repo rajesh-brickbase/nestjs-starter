@@ -1,0 +1,11 @@
+version: '2'
+services:
+  sensorflow-sonar:
+    image: sonarqube:7.9.1-community
+    ports:
+      - 9001:9000
+      - 9092:9092
+      
+      
+
+# username admin and password admin . Point your browser at http://localhost:9000      

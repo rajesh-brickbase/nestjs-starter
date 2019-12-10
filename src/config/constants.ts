@@ -1,0 +1,1 @@
+export const TEST_CONFIG_OPTIONS = 'CONFIG_OPTIONS';
