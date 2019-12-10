@@ -7,7 +7,7 @@ import {DefaultModule} from './app/default/default.module';
     imports: [
         ConfigModule,
         DefaultModule,
-        NodeSignalModule
+        NodeSignalModule,
     ],
     controllers: [],
     providers: [],

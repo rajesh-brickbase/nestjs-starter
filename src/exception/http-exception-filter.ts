@@ -1,6 +1,5 @@
-import {ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus, LoggerService, Inject, Injectable} from '@nestjs/common';
+import {ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus} from '@nestjs/common';
 import {Request, Response} from 'express';
-import {AppLogger} from '../config/log.config';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -10,9 +9,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
         const response = ctx.getResponse<Response>();
         const request = ctx.getRequest<Request>();
 
-        //this.logger.error('Error Caught in ExceptionFilter', JSON.stringify(exception));
+        // console.log('Error Caught in ExceptionFilter', JSON.stringify(exception));
         let status = null;
-        if (typeof exception['getStatus'] === 'function') {
+        if (typeof exception.getStatus === 'function') {
             status = exception.getStatus();
         } else {
             status = HttpStatus.INTERNAL_SERVER_ERROR;

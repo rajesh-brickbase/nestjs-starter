@@ -1,13 +1,11 @@
-
 import {DynamicModule, Logger} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {NodeSignal} from '../app/node-signal/node-signal.entity';
-//import {NodeSignalRepository} from '../repository/node-signal-repository';
 
 const entitiesList = [NodeSignal];
 
-//let entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
-//let repoList = [__dirname + '/../**/*.repository{.ts,.js}'];
+// let entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
+// let repoList = [__dirname + '/../**/*.repository{.ts,.js}'];
 // entitiesList =entitiesList.concat(repoList);
 // entities: [__dirname + '/../**/*.entity{.ts,.js}'],
 
@@ -16,12 +14,11 @@ const entitiesList = [NodeSignal];
  */
 export class DBProviderModule {
 
+    static forConnection(): DynamicModule {
 
-    static forConnection (): DynamicModule{
+        Logger.log('entities : {}' + entitiesList);
 
-         Logger.log('entities : {}' + entitiesList);
-
-        return  TypeOrmModule.forRoot({
+        return TypeOrmModule.forRoot({
             type: 'postgres',
             host: 'localhost',
             port: 5432,
@@ -31,9 +28,6 @@ export class DBProviderModule {
             entities: entitiesList,
             synchronize: true, // for DEV only
             keepConnectionAlive: true,
-
         });
     }
 }
-
-

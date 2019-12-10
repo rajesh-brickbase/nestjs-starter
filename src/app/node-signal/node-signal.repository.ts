@@ -5,8 +5,7 @@ import {NodeSignal} from './node-signal.entity';
 export class NodeSignalRepository extends Repository<NodeSignal> {
 
     async findAll(): Promise<NodeSignal[]> {
-        let values = await this.find();
-        console.log('Data from DB ', values);
+        const values = await this.find();
         return values;
     }
 

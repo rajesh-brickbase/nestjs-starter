@@ -6,10 +6,11 @@ import {NodeSignalService} from './node-signal.service';
 import {NodeSignalController} from './node-signal.controller';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([NodeSignal,NodeSignalRepository])
-  ],
-  providers: [NodeSignalService],
-  controllers: [NodeSignalController]
+    imports: [
+        TypeOrmModule.forFeature([NodeSignal, NodeSignalRepository]),
+    ],
+    providers: [NodeSignalService],
+    controllers: [NodeSignalController],
 })
-export class NodeSignalModule {}
+export class NodeSignalModule {
+}

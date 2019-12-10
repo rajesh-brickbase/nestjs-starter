@@ -6,7 +6,7 @@ export class NodeSignal {
     @PrimaryGeneratedColumn({name: 'id'})
     id: number;
 
-    @Column( {name: "first_name", length: 255})
+    @Column({name: 'first_name', length: 255})
     firstName: string;
 
 }

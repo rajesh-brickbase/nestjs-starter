@@ -9,8 +9,8 @@ export class NodeSignalService {
     }
 
     async getData() {
-        let values = await this.repo.findAll();
-        console.log('Data from DB ', values);
+        const values = await this.repo.findAll();
+       // console.log('Data from DB ', values);
         return values;
     }
 
