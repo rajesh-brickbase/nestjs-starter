@@ -9,7 +9,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
         const response = ctx.getResponse<Response>();
         const request = ctx.getRequest<Request>();
 
-        // console.log('Error Caught in ExceptionFilter', JSON.stringify(exception));
+        console.log('Error Caught in ExceptionFilter', exception);
         let status = null;
         if (typeof exception.getStatus === 'function') {
             status = exception.getStatus();

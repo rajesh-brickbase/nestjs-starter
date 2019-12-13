@@ -1,8 +1,9 @@
 import {DynamicModule, Logger} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {NodeSignal} from '../app/node-signal/node-signal.entity';
+import {RawMeasurement} from '../app/raw-measurement/raw-measurement.entity';
 
-const entitiesList = [NodeSignal];
+const entitiesList = [NodeSignal, RawMeasurement];
 
 // let entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
 // let repoList = [__dirname + '/../**/*.repository{.ts,.js}'];
