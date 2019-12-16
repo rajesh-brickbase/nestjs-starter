@@ -4,8 +4,8 @@ import {AppLogger} from './log.config';
 
 @Module({
     imports: [DBProviderModule.forConnection()],
-    providers: [AppLogger],
-    exports: [AppLogger],
+   // providers: [AppLogger],
+   // exports: [AppLogger],
 })
 export class ConfigModule {
 }
