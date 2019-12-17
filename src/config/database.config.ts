@@ -2,6 +2,7 @@ import {DynamicModule, Logger} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {NodeSignal} from '../app/node-signal/node-signal.entity';
 import {RawMeasurement} from '../app/raw-measurement/raw-measurement.entity';
+import {DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USERNAME} from './constants';
 
 const entitiesList = [NodeSignal, RawMeasurement];
 
@@ -21,11 +22,11 @@ export class DBProviderModule {
 
         return TypeOrmModule.forRoot({
             type: 'postgres',
-            host: 'localhost',
-            port: 5432,
-            database: 'postgres',
-            username: 'devuser',
-            password: 'devuser',
+            host: DB_HOST,
+            port: DB_PORT,
+            database: DB_NAME,
+            username: DB_USERNAME,
+            password: DB_PASSWORD,
             entities: entitiesList,
             synchronize: true, // for DEV only
             keepConnectionAlive: true,

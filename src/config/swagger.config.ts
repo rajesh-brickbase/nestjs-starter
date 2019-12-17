@@ -11,6 +11,6 @@ export class SwaggerConfig {
             .setVersion('2.0')
             .build();
         const document = SwaggerModule.createDocument(app, options);
-        SwaggerModule.setup('api/swagger', app, document);
+        SwaggerModule.setup('api/docs', app, document);
     }
 }

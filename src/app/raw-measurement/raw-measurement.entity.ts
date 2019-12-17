@@ -1,6 +1,6 @@
 import {Column, Entity, PrimaryColumn} from 'typeorm';
 
-@Entity('raw_measurements')
+@Entity('raw_measurements_poc')
 export class RawMeasurement {
 
     @PrimaryColumn({name: 'time', type: 'timestamp'})

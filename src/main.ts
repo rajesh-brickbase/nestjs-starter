@@ -2,6 +2,7 @@ import {NestFactory} from '@nestjs/core';
 import {AppModule} from './app.module';
 import {SwaggerConfig} from './config/swagger.config';
 import {AppLogger} from './config/log.config';
+import {APP_PORT} from './config/constants';
 
 async function bootstrap() {
 
@@ -13,7 +14,7 @@ async function bootstrap() {
     // Configuration of Swagger API
     SwaggerConfig.create(appModule);
 
-    await appModule.listen(4050);
+    await appModule.listen(APP_PORT);
 }
 
 bootstrap();

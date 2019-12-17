@@ -1,0 +1,27 @@
+
+environments:
+
+  # The unique name of the environment  (required)
+  - name: devsf
+    provider: ecs                   # The type of environment to use, ec2, eks, ecs, or ecs-fargate (default: ecs)
+
+
+    ### Attributes for the ECS container instances
+    cluster:
+      imageId: ami-xxxxxx           # The AMI to use for the ECS container instances (default: latest ECS optimized AMI)
+      osType: amazon                # Type of OS.  Supported values: amazon, centos7 (default: amazon)
+      instanceType: t2.micro        # The instance type to use for the ECS container instances (default: t2.micro)
+      instanceTenancy: default      # Whether to use default or dedicated tenancy (default: default)
+      desiredCapacity: 1            # Desired number of ECS container instances (default 1)
+      targetCPUReservation: 75         # Threshold for % CPU utilization to scale out ECS container instances (default: 75)
+      targetMemoryReservation: 75          # Threshold for % memory utilization to scale in ECS container instances (default: 75)
+      minSize: 1                    # Min size to scale the ECS ASG to (default: 1)
+      maxSize: 2                    # Max size to scale the ECS ASG to (default: 2)
+
+
+service:
+  name: ecs-fargate
+  healthEndpoint: /api/v2/index
+  port: 80
+  pathPatterns:
+    - /*

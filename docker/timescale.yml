@@ -1,0 +1,15 @@
+version: '2'
+services:
+  timescale:
+    image: timescaledb:latest-pg11
+    # volumes:
+    #     - ~/volumes/jhipster/jhipsterSampleMicroservice/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=devuser
+    ports:
+      - 5432:5432
+
+# docker pull timescale/timescaledb
+
+# docker run -d --name timescaledb -p 5432:5432  -e POSTGRES_USER=postgress -e POSTGRES_PASSWORD=postgress  timescale/timescaledb:latest

@@ -1,0 +1,26 @@
+environments:
+- name: devsf
+  provider: ecs-fargate
+
+service:
+  port: 4050
+  pathPatterns:
+    - /*
+  healthEndpoint: /api/v2/index
+  # What namespace to use for service discovery (default <environment>.<namespace>.local)
+  name: ingest-api
+  desiredCount: 2
+  dockerfile: ./Dockerfile
+  protocol: HTTP
+  targetCPUUtilization: 50
+  minSize: 1
+  maxSize: 4
+  deploymentStrategy: rolling
+  environment:
+    PG_HOST: irsyad-timescaledb-sensorflow-4f90.a.timescaledb.io
+    PG_DATABASE: defaultdb
+    PG_PASSWORD: l3v4p5cjx2mkah1a
+    PG_USER: tsdbadmin
+    PG_PORT: 24480
+    NODE_ENV: 'development'
+    PORT: 80

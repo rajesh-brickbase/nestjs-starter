@@ -12,7 +12,7 @@
     "start": "rm -rf dist && nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/server",
+    "start:prod": "node dist/main",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest --config=./test/jest.json",
     "test:watch": "jest --watch",
