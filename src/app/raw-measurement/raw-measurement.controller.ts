@@ -4,11 +4,14 @@ import {ApiTags} from '@nestjs/swagger';
 import {RawMeasurementService} from './raw-measurement.service';
 import {RawMeasurementBundleDto} from './dto/raw-measuerment-bundle.dto';
 import {ResultDto} from '../../common/ResultDto';
+import {AppLogger} from '../../config/log.config';
 
 @UseFilters(new HttpExceptionFilter())
 @ApiTags('Raw Measurement')
 @Controller('raw-measurement')
 export class RawMeasurementController {
+
+    private readonly logger = new AppLogger('RawMeasurementController');
 
     constructor(private rawMeasurementService: RawMeasurementService) {
     }
@@ -22,6 +25,7 @@ export class RawMeasurementController {
     @Post('/bundle')
     @HttpCode(HttpStatus.CREATED)
     createMany(@Body() bundleDto: RawMeasurementBundleDto): Promise<ResultDto> {
+        this.logger.logObject('Received Request Message', bundleDto);
         return this.rawMeasurementService.createAsBundle(bundleDto);
     }
 

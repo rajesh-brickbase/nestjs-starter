@@ -26,6 +26,10 @@ export class AppLogger extends Logger {
         super.log(this.formatMessage(message));
     }
 
+    logObject(message: string, value : any) {
+        super.log(this.formatMessage(message + ' : '+ JSON.stringify(value)));
+    }
+
     debug(message: string) {
         super.debug(this.formatMessage(message));
     }
