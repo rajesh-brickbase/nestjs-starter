@@ -32,4 +32,9 @@ export class DBProviderModule {
             keepConnectionAlive: true,
         });
     }
+
+
+//     entities: [
+//         __dirname + "/entity/*.js"
+// ]
 }

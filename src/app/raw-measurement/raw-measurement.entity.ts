@@ -1,10 +1,10 @@
-import {Column, Entity, PrimaryColumn} from 'typeorm';
+import {BeforeInsert, Column, Entity, PrimaryColumn} from 'typeorm';
 
 @Entity('raw_measurements_poc')
 export class RawMeasurement {
 
     @PrimaryColumn({name: 'time', type: 'timestamp'})
-    timestamp: string;
+    timestampAsISO: string;
 
     @PrimaryColumn({name: 'src_mac_id', length: 255})
     srcMacId: string;
@@ -20,5 +20,10 @@ export class RawMeasurement {
 
     @Column({name: 'measurement_value', type: 'int'})
     measurementValue: string;
+
+    @BeforeInsert()
+    beforeInsert() {
+        console.log('Event before insert');
+    }
 
 }

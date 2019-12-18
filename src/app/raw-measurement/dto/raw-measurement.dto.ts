@@ -20,4 +20,8 @@ export class RawMeasurementDto {
     @ApiModelProperty()
     measurementValue: string;
 
+    timestampAsISO: string;
+
+    value: string;
+
 }
