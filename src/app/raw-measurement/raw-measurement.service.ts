@@ -34,8 +34,10 @@ export class RawMeasurementService {
             console.log('Item value ', item);
             // below unix time stamp
             item.timestampAsISO = new Date(parseInt(item.timestamp) * 1000).toISOString();
-            if (item.measurementValue) {
-                item.measurementValue = '0';
+            if (item.value) {
+                item.measurementValue = item.value;
+            }else{
+                item.measurementValue ='0';
             }
         });
 

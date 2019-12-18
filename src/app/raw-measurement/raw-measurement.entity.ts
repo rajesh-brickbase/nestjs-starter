@@ -18,7 +18,7 @@ export class RawMeasurement {
     @Column({name: 'position_id', type: 'uuid'})
     positionId: string;
 
-    @Column({name: 'measurement_value', type: 'int'})
+    @Column({name: 'measurement_value', type: 'numeric'})
     measurementValue: string;
 
     @BeforeInsert()
