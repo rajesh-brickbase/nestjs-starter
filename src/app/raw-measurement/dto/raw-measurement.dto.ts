@@ -3,7 +3,7 @@ import {ApiModelProperty} from '@nestjs/swagger/dist/decorators/api-model-proper
 export class RawMeasurementDto {
 
     @ApiModelProperty()
-    timestamp: string;
+    unixTimestamp: string;
 
     @ApiModelProperty()
     srcMacId: string;
@@ -21,7 +21,4 @@ export class RawMeasurementDto {
     measurementValue: string;
 
     timestampAsISO: string;
-
-    value: string;
-
 }

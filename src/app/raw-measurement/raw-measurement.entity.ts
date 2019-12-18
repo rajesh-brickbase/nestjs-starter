@@ -4,13 +4,13 @@ import {BeforeInsert, Column, Entity, PrimaryColumn} from 'typeorm';
 export class RawMeasurement {
 
     @PrimaryColumn({name: 'time', type: 'timestamp'})
-    timestampAsISO: string;
+    timestamp: Date;
 
     @PrimaryColumn({name: 'src_mac_id', length: 255})
     srcMacId: string;
 
     @PrimaryColumn({name: 'stream_index', type: 'int4'})
-    streamIndex: string;
+    streamIndex: number;
 
     @PrimaryColumn({name: 'measurement_type', type: 'text'})
     measurementType: string;
@@ -19,11 +19,10 @@ export class RawMeasurement {
     positionId: string;
 
     @Column({name: 'measurement_value', type: 'numeric'})
-    measurementValue: string;
+    measurementValue: number;
 
     @BeforeInsert()
     beforeInsert() {
-        console.log('Event before insert');
     }
 
 }

@@ -16,4 +16,9 @@ export class RawMeasurementRepository extends Repository<RawMeasurement> {
     async createMany(dtoList): Promise<RawMeasurement[]> {
         return await this.save(dtoList);
     }
+
+    async findOneByCriteria(entity ): Promise<RawMeasurement> {
+        const value = await this.findOne(entity);
+        return value;
+    }
 }

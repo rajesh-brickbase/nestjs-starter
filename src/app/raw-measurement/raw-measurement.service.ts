@@ -4,6 +4,8 @@ import {RawMeasurementBundleDto} from './dto/raw-measuerment-bundle.dto';
 import {ResultDto} from '../../common/ResultDto';
 import {EMPTY_DATA, EMPTY_DATA_MSG, SUCCESS, SUCCESS_MSG} from '../../config/constants';
 import {AppLogger} from '../../config/log.config';
+import {RawMeasurementDto} from './dto/raw-measurement.dto';
+import {RawMeasurement} from './raw-measurement.entity';
 
 @Injectable()
 export class RawMeasurementService {
@@ -13,39 +15,45 @@ export class RawMeasurementService {
     constructor(private repo: RawMeasurementRepository) {
     }
 
+    /**
+     *  A default message and use in testing api.
+     */
     async defaultMessage() {
         const resultDto = new ResultDto();
         return resultDto.defaultStatus();
     }
 
+    /**
+     * Create many records from Bundle of data
+     * @param bundleDto
+     */
     async createAsBundle(bundleDto: RawMeasurementBundleDto) {
-
-        this.logger.logObject('Value of this ', bundleDto);
-
         const resultDto = new ResultDto();
         if (!bundleDto || !bundleDto.dataPackets) {
-            resultDto.message = EMPTY_DATA_MSG;
-            resultDto.status = EMPTY_DATA;
-            return resultDto;
+            return resultDto.errorMessage(EMPTY_DATA_MSG);
         }
-
-        // updating value for item
-        bundleDto.dataPackets.forEach(function(item) {
-            console.log('Item value ', item);
-            // below unix time stamp
-            item.timestampAsISO = new Date(parseInt(item.timestamp) * 1000).toISOString();
-            if (item.value) {
-                item.measurementValue = item.value;
-            }else{
-                item.measurementValue ='0';
-            }
-        });
-
-        const values = await this.repo.createMany(bundleDto.dataPackets);
-
-        resultDto.message = SUCCESS_MSG;
-        resultDto.status = SUCCESS;
-        resultDto.data = values.length;
-        return resultDto;
+        const values = await this.repo.createMany(this.extractEntitiesFromDataPackets(bundleDto.dataPackets));
+        return resultDto.successMessage(SUCCESS_MSG, values.length);
     }
+
+    extractEntitiesFromDataPackets(dataPackets: RawMeasurementDto[]): RawMeasurement[] {
+        let toEntityFn = this.toEntity;
+        let entities = Array<RawMeasurement>();
+        dataPackets.forEach(function(item) {
+            entities.push(toEntityFn(item));
+        });
+        return entities;
+    }
+
+    toEntity(dto): RawMeasurement {
+        const entity = new RawMeasurement();
+        entity.srcMacId = dto.srcMacId;
+        entity.timestamp = new Date(parseInt(dto.unixTimestamp) * 1000);
+        entity.streamIndex = dto.streamIndex;
+        entity.measurementType = dto.measurementType;
+        entity.measurementValue = dto.measurementValue;
+        entity.positionId = dto.positionId;
+        return entity;
+    }
+
 }

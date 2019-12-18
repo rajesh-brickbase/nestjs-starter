@@ -6,6 +6,9 @@ export class RawMeasurementBundleDto {
     @ApiModelProperty()
     bundledDataType: string;
 
+    @ApiModelProperty()
+    locationId: string;
+
     @ApiModelProperty({type: [RawMeasurementDto]})
     dataPackets: RawMeasurementDto[];
 
