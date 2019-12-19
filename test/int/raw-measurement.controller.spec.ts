@@ -69,7 +69,7 @@ describe('RawMeasurement Controller', () => {
                 measurementType: dto.measurementType,
             });
 
-            logger.logObject('response 2 ->', resultEntity);
+            logger.logObject('Saved Entity', resultEntity);
 
             let isoDateValue = new Date(parseInt(dto.unixTimestamp) * 1000).toISOString();
             let entityTime = resultEntity.timestamp;
