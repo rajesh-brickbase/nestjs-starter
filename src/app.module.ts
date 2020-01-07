@@ -5,6 +5,7 @@ import {DefaultModule} from './app/default/default.module';
 import {RawMeasurementModule} from './app/raw-measurement/raw-measurement.module';
 import {NodeMetaDataModule} from './app/node-meta-data/node-meta-data.module';
 import { BundleDataModule } from './app/bundle-data/bundle-data.module';
+import { LocationModule } from './app/location/location.module';
 
 @Module({
     imports: [
@@ -14,6 +15,7 @@ import { BundleDataModule } from './app/bundle-data/bundle-data.module';
         RawMeasurementModule,
         NodeMetaDataModule,
         BundleDataModule,
+        LocationModule,
     ],
     controllers: [],
     providers: [],

@@ -3,7 +3,8 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USERNAME} from './constants';
 
 //const entitiesList = [NodeSignal, RawMeasurement,NodeMetaData];
-const entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
+const entitiesList = [__dirname + 'dist/../**/*.entity{.ts,.js}'];
+//const entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
 
 /**
  * Handle Database connection.
