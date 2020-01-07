@@ -1,0 +1,110 @@
+{
+  "bundledDataType": "raw_measurements",
+  "locationId": "b6779831-9511-492d-ba2e-2c9015060f42",
+  "dataPackets": [
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 3,
+      "measurementType": "temperature_ambient",
+      "measurementValue": 24.5
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 4,
+      "measurementType": "humidity_ambient",
+      "measurementValue": 74
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 5,
+      "measurementType": "pressure_ambient",
+      "measurementValue": 1008
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 6,
+      "measurementType": "dew_point",
+      "measurementValue": 19.55995449439514
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 7,
+      "measurementType": "valve",
+      "measurementValue": 0
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "automation_status",
+      "measurementValue": 0
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "fan_speed",
+      "measurementValue": 3
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "guest_overridden",
+      "measurementValue": 0
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "guest_setpoint",
+      "measurementValue": 19
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "mode",
+      "measurementValue": 1
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "powered",
+      "measurementValue": 1
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "temperature_set",
+      "measurementValue": 19
+    },
+    {
+      "unixTimestamp": 1576656278,
+      "positionId": "63e96627-42c3-4985-9005-b9dfd6c50bfd",
+      "srcMacId": "FFFF000D6F4DAAB6",
+      "streamIndex": 0,
+      "measurementType": "vanne",
+      "measurementValue": 3
+    }
+  ]
+}

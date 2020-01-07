@@ -1,13 +1,18 @@
 # same version as AWS Lambda
-FROM node:13.3.0
+FROM node:13.4.0-buster-slim
 
-WORKDIR /app
-COPY . .
-ENV NODE_ENV=development
+WORKDIR /ingest-app
+
+COPY package.json /ingest-app
 
 RUN npm install
 
-RUN npm build
+COPY . /ingest-app
+
+ENV NODE_ENV=development
+
+RUN npm run-script build
 
 # run app
-CMD ["node", "./dist/main.js"]
+CMD ["node" , "./dist/main.js"]
+

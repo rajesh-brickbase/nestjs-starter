@@ -36,7 +36,17 @@ export class RawMeasurementService {
         return resultDto.successMessage(SUCCESS_MSG, values.length);
     }
 
-    extractEntitiesFromDataPackets(dataPackets: RawMeasurementDto[]): RawMeasurement[] {
+    /**
+     * Create  all records, which are available in array.
+     * @param dtoList
+     */
+    async createMany(dtoList: RawMeasurementDto[]) {
+        const resultDto = new ResultDto();
+        const values = await this.repo.createMany(this.extractEntitiesFromDataPackets(dtoList));
+        return resultDto.successMessage(SUCCESS_MSG, values.length);
+    }
+
+    private extractEntitiesFromDataPackets(dataPackets: RawMeasurementDto[]): RawMeasurement[] {
         let toEntityFn = this.toEntity;
         let entities = Array<RawMeasurement>();
         dataPackets.forEach(function(item) {
@@ -45,7 +55,7 @@ export class RawMeasurementService {
         return entities;
     }
 
-    toEntity(dto): RawMeasurement {
+    private toEntity(dto): RawMeasurement {
         const entity = new RawMeasurement();
         entity.srcMacId = dto.srcMacId;
         entity.timestamp = new Date(parseInt(dto.unixTimestamp) * 1000);

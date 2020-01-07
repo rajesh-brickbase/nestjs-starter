@@ -1,15 +1,9 @@
 import {DynamicModule, Logger} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
-import {NodeSignal} from '../app/node-signal/node-signal.entity';
-import {RawMeasurement} from '../app/raw-measurement/raw-measurement.entity';
 import {DB_HOST, DB_NAME, DB_PASSWORD, DB_PORT, DB_USERNAME} from './constants';
 
-const entitiesList = [NodeSignal, RawMeasurement];
-
-// let entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
-// let repoList = [__dirname + '/../**/*.repository{.ts,.js}'];
-// entitiesList =entitiesList.concat(repoList);
-// entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+//const entitiesList = [NodeSignal, RawMeasurement,NodeMetaData];
+const entitiesList = [__dirname + '/../**/*.entity{.ts,.js}'];
 
 /**
  * Handle Database connection.
@@ -32,9 +26,4 @@ export class DBProviderModule {
             keepConnectionAlive: true,
         });
     }
-
-
-//     entities: [
-//         __dirname + "/entity/*.js"
-// ]
 }

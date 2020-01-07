@@ -6,10 +6,12 @@ import {RawMeasurement} from './raw-measurement.entity';
 import {RawMeasurementRepository} from './raw-measurement.repository';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([RawMeasurement, RawMeasurementRepository]),
-  ],
-  controllers: [RawMeasurementController],
-  providers: [RawMeasurementService],
+    imports: [
+        TypeOrmModule.forFeature([RawMeasurement, RawMeasurementRepository]),
+    ],
+    controllers: [RawMeasurementController],
+    providers: [RawMeasurementService],
+    exports: [RawMeasurementService]
 })
-export class RawMeasurementModule {}
+export class RawMeasurementModule {
+}

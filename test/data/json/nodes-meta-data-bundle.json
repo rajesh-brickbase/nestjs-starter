@@ -1,0 +1,30 @@
+{
+  "bundledDataType": "node_meta_data",
+  "locationId": "b6779831-9511-492d-ba2e-2c9015060f42",
+  "dataPackets": [
+    {
+      "unixTimestamp": 1578298420832,
+      "nodeMacId": "1",
+      "measurementType": "boot_time",
+      "measurementValue": 1578298420832
+    },
+    {
+      "unixTimestamp": 1578298420832,
+      "nodeMacId": "1",
+      "measurementType": "battery_level",
+      "measurementValue": 3.5
+    },
+    {
+      "unixTimestamp": 1578298420832,
+      "nodeMacId": "1",
+      "measurementType": "last_rssi",
+      "measurementValue": 44
+    },
+    {
+      "unixTimestamp": 1578298420832,
+      "nodeMacId": "1",
+      "measurementType": "last_snr",
+      "measurementValue": 9.7
+    }
+  ]
+}
